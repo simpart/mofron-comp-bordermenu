@@ -1,0 +1,22 @@
+{
+  "name": "mofron-comp-bordermenu",
+  "version": "0.0.1",
+  "description": "border-menu component for mofron",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/simpart/mofron-comp-bordermenu.git"
+  },
+  "keywords": [
+    "front-end"
+  ],
+  "author": "simparts",
+  "license": "SEE LICENSE IN LICENSE",
+  "bugs": {
+    "url": "https://github.com/simpart/mofron-comp-bordermenu/issues"
+  },
+  "homepage": "https://github.com/simpart/mofron-comp-bordermenu#readme"
+}
