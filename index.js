@@ -51,8 +51,9 @@ mf.comp.BorderMenu = class extends Menu {
                 }
             } else {
                 cmp.style({
-                    'border'   : 'solid 1px black',
-                    'position' : 'relative'
+                    'border'       : 'solid 1px',
+                    'border-color' : this.color().getStyle(),
+                    'position'     : 'relative'
                 });
                 if (true === this.horizon()) {
                     cmp.style({
@@ -66,6 +67,29 @@ mf.comp.BorderMenu = class extends Menu {
                     });
                 }
             }
+        } catch (e) {
+            console.error(e.stack);
+            throw e;
+        }
+    }
+    
+    color (clr) {
+        try {
+            if (undefined === clr) {
+                /* getter */
+                return (undefined === this.m_color) ? new mf.Color(0,0,0) : this.m_color;
+            }
+            /* setter */
+            if (true !== mf.func.isInclude(clr, 'Color')) {
+                throw new Error('invalid parameter');
+            }
+            let chd = this.child();
+            for (let cidx in chd) {
+                chd[cidx].style({
+                    'border-color' : clr.getStyle()
+                });
+            }
+            this.m_color = clr;
         } catch (e) {
             console.error(e.stack);
             throw e;
